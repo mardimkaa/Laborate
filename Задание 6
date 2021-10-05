@@ -1,0 +1,45 @@
+//Задание 1
+#include <stdio.h>
+int main()
+{
+	int A, B;
+	printf("Введите число A и число B\n");
+	scanf("%d%d", &A, &B);
+	int zna = A;
+	A = B;
+	B = zna;
+	printf("Теперь A принимает значение %d, а B принимает значение %d", A, B);
+	return 0;
+}
+
+// задание 2
+#include <stdio.h>
+int main()
+{
+	int A, B, C;
+	printf("Введите числа A, B и C\n");
+	scanf("%d%d%d", &A, &B, &C);
+	int zna = A;
+	A = B;
+	B = C;
+	C = zna;
+	printf("Теперь A принимает значение %d,  B принимает значение %d, C принимает значение %d", A, B, C);
+	return 0;
+}
+
+// задание 3
+#include <stdio.h>
+int main()
+{
+	int A, B, C;
+	printf("Введите числа A, B и C\n");
+	scanf("%d%d%d", &A, &B, &C);
+	int zna = A;
+	A = C;
+	B = zna;
+	C = B;
+	printf("Теперь A принимает значение %d,  B принимает значение %d, C принимает значение %d", A, B, C);
+	return 0;
+}
+
+//задание 4
