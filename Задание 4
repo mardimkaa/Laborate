@@ -1,10 +1,11 @@
 //задание 1
 
-
+#include <stdio.h>
 int main()
 {
     int a;
     int b;
+    printf("Введите два числа\n");
     scanf("%d%d", &a, &b);
     
     int s;
@@ -13,7 +14,7 @@ int main()
     s = a * b;
     p = 2*a + 2*b;
     
-    printf("площадь равна %d\n", s);
+    printf("площадь прямоугольника равна %d\n", s);
     printf("периметр равен %d", p);
 
     return 0;
@@ -22,9 +23,11 @@ int main()
 
 //задание 2
 
+#include <stdio.h>
 int main()
 {
     int d;
+    printf("Введите число\n");
     scanf("%d", &d);
     
     double pi = 3.14;
@@ -33,7 +36,7 @@ int main()
     
     S = d * pi;
     
-    printf("Длинна равна %f", S );
+    printf("Длинна окружности равна %f", S );
     
     return 0;
 }
@@ -62,46 +65,43 @@ int main()
 //задание 4
 
 #include <stdlib.h>
+#include <math.h>
 
 int main()
 {
-    int a;
-    int b;
+    int a, b;
+    printf("Введите два числа\n");
     scanf("%d%d", &a, &b);
-    
-    if (a == 0)
-        printf("значение а равно нулю");
-    else if (b == 0)
-        printf("значение b равно нулю");
-    else
-        printf("сумма = %d\n", a + b);
-        printf("разность = %d\n", abs(a - b));
-        printf("произведение = %d\n", a * b);
-        
-        
-    
-    return 0;
+    int sum = pow(a, 2) + pow(b, 2);
+    int razn = pow(a, 2) + pow(b, 2);
+    razn = abs(razn);
+    int pr = pow(a, 2) * pow(b, 2);
+    int ch = pow(a, 2) / pow(b, 2);
+    printf("Сумма квадратов = %d\n", sum);
+    printf("Разность квадратов = %d\n", razn);
+    printf("Произведение квадратов = %d\n", pr);
+    printf("частное квадратов = %d\n", sum);
 }
 
 //задание 5
 
-#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
 
-int main() 
+int main()
 {
-    int a;
-    int b;
-    printf("Введите числа a и b\n");
+    int a, b;
+    printf("Введите два числа\n");
     scanf("%d%d", &a, &b);
     int sum = abs(a) + abs(b);
-    printf("%d\n", sum);
-    int raz = abs(a) - abs(b);
-    printf("%d\n", raz);
+    int razn = abs(a) - abs(b);
+    razn = abs(razn);
     int pr = abs(a) * abs(b);
-    printf("%d\n", pr);
-    double ch = (double)abs(a) / abs(b);
-    printf("%f", ch);
-    return 0;
-    
+    int ch = abs(a) / abs(b);
+    printf("Сумма модулей = %d\n", sum);
+    printf("Разность модулей = %d\n", razn);
+    printf("Произведение модулей = %d\n", pr);
+    printf("частное модулей = %d\n", sum);
 }
+
