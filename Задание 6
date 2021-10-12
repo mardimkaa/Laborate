@@ -33,7 +33,12 @@ int main()
 {
 	int A, B, C;
 	printf("Введите числа A, B и C\n");
-	scanf("%d%d%d", &A, &B, &C);
+	printf("A:");
+	scanf("%d", &A);
+	printf("B:");
+	scanf("%d", &B);
+	printf("C:");
+	scanf("%d", &C);
 	int zna = A;
 	A = C;
 	B = zna;
@@ -43,3 +48,58 @@ int main()
 }
 
 //задание 4
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+	int x;
+	printf("Введите x:");
+	scanf("%d", &x);
+	int b = 3 * pow(x,6) - 6 * pow(x, 2) - 7;
+	printf("3 * x^6 - 6 * x^2 = %d", b);
+	return 0;
+}
+//задание 5
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+	int x;
+	printf("Введите x:");
+	scanf("%d", &x);
+	int y = 4 * (x-3)*6 - 7*(x-3)*3 + 2;
+	printf("4 * (x-3)*6 - 7*(x-3)*3 + 2 = %d\n", y);
+	printf("y = %d", y);
+	return 0;
+}
+
+// задание 6
+int main()
+{
+	int A;
+	printf("Введите A:");
+	scanf("%d", &A);
+	int A1 = pow(A,2);
+	A = A1 * A1 * A1 * A1;
+	printf("A^8 = %d", A);
+	
+	return 0;
+	
+}
+
+//задание 7
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+	int A;
+	printf("Введите A:");
+	scanf("%d", &A);
+	int A1 = pow(A,2);
+	int A2 = A1 * A;
+	A = A2 * A2 * A2 * A2 * A2;
+	printf("A^15 = %d", A);
+	
+	return 0;
+	
+}
