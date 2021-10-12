@@ -81,9 +81,10 @@ int main()
 	int A;
 	printf("Введите A:");
 	scanf("%d", &A);
-	int A1 = pow(A,2);
-	A = A1 * A1 * A1 * A1;
-	printf("A^8 = %d", A);
+	int A1 = A * A;
+	A = A1 * A1;
+	A1 = A * A;
+	printf("A^8 = %d", A1);
 	
 	return 0;
 	
@@ -97,9 +98,9 @@ int main()
 	int A;
 	printf("Введите A:");
 	scanf("%d", &A);
-	int A1 = pow(A,2);
-	int A2 = A1 * A;
-	A = A2 * A2 * A2 * A2 * A2;
+	int A1 = A * A * A;
+	int A2 = A1 * A1 * A1; 
+	A = A2 * A1 * A2 * A1;
 	printf("A^15 = %d", A);
 	
 	return 0;
