@@ -3,40 +3,46 @@
 #include <math.h>
 int main()
 {
-int x1, x2, y1, y2;
-printf("Введите координаты первой точки\n");
-scanf("%d%d", &x1, &y1);
-printf("Введите координаты второй точки\n");
-scanf("%d%d", &x2, &y2);
-double L = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-printf("%f", L);
+    double x1, x2, y1, y2;
+    printf("Введите координаты первой точки\n");
+    printf("x:");
+    scanf("%lf", &x1);
+    printf("y:");
+    scanf("%lf", &y1);
+    
+    printf("Введите координаты второй точки\n");
+    printf("x:");
+    scanf("%lf", &x2);
+    printf("y:");
+    scanf("%lf", &y2);
+    double L = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    printf("Расстояние между точками:%lf", L);
 
-return 0;
+    return 0;
+    
+
 }
 
 //задание 2
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
 int main()
 {
-int A, B, C;
-printf("A:");
-scanf ("%d", &A);
-
-printf("B:");
-scanf ("%d", &B);
-
-printf("C:");
-scanf ("%d", &C);
-
-double AC = labs(C - A);
-double BC = labs(C - B);
-
-printf("AC = %f\n", AC);
-printf("BC = %f\n", BC);
-printf("AC + BC = %f", AC * BC);
-return 0;
+    double A, B, C;
+    printf("A:");
+    scanf ("%lf", &A);
+ 
+    printf("B:");
+    scanf ("%lf", &B);
+ 
+    printf("C:");
+    scanf ("%lf", &C);
+    
+    double AC = abs(C - A);
+    double BC = abs(C - B);
+    
+    printf("AC = %lf\n", AC);
+    printf("BC = %lf\n", BC);
+    printf("AC + BC = %lf", AC + BC);
+    return 0;
 }
 
 // задание 3
@@ -46,53 +52,54 @@ return 0;
 #include <stdlib.h>
 int main()
 {
-int A, B, C;
-printf("A:");
-scanf ("%d", &A);
+    double A, B, C;
+    printf("A:");
+    scanf ("%lf", &A);
 
-printf("B:");
-scanf ("%d", &B);
+    printf("B:");
+    scanf ("%lf", &B);
 
-printf("C:");
-scanf ("%d", &C);
+    printf("C:");
+    scanf ("%lf", &C);
 
-double ac = labs(C - A);
-double bc = labs(C - B);
+    double ac = abs(C - A);
+    double bc = abs(C - B);
 
 
-printf("AC * BC = %f", ac * bc);
-return 0;
+    printf("AC * BC = %lf", ac * bc);
+    return 0;
 }
-// задание 4
+ // задание 4
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
 int main()
 {
-int x1, x2, y1, y2, a, b, s, p;
+    int x1, x2, y1, y2, a, b, s, p;
+    
+    printf("Введите координаты первой точки\n");
+    printf("x:");
+    scanf("%d", &x1);
+    printf("y:");
+    scanf("%d", &y1);
+    
+    printf("Введите координаты второй точки\n");
+    printf("x:");
+    scanf("%d", &x2);
+    printf("y:");
+    scanf("%d", &y2);
+    
+    a = abs(x2 - x1);
+    b = abs(y2 - y1);
+    p = (a + b) * 2;
+    s = a * b;
+    
+    printf("Площадь прямоугольника равна %d\n", s);
+    printf("Периметр прямоугольника равен %d", p);
+    
+    return 0;
 
-printf("Введите координаты первой точки\n");
-printf("x:");
-scanf("%d", &x1);
-printf("y:");
-scanf("%d", &y1);
-
-printf("Введите координаты второй точки\n");
-printf("x:");
-scanf("%d", &x2);
-printf("y:");
-scanf("%d", &y2);
-
-a = abs(x2 - x1);
-b = abs(y2 - y1);
-p = (a + b) * 2;
-s = a * b;
-
-printf("Площадь прямоугольника равна %d\n", s);
-printf("Периметр прямоугольника равен %d", p);
-
-return 0;
 }
 
 // задание 5
@@ -101,33 +108,34 @@ return 0;
 #include <stdlib.h>
 int main()
 {
-double x1, x2, y1, y2, x3, y3;
-double a, b, c;
-double s, p;
-printf("Введите координаты первой точки\n");
-printf("x:");
-scanf("%lf", &x1);
-printf("y:");
-scanf("%lf", &y1);
+    double x1, x2, y1, y2, x3, y3;
+    double a, b, c;
+    double s, p;
+    printf("Введите координаты первой точки\n");
+    printf("x:");
+    scanf("%lf", &x1);
+    printf("y:");
+    scanf("%lf", &y1);
+    
+    printf("Введите координаты второй точки\n");
+    printf("x:");
+    scanf("%lf", &x2);
+    printf("y:");
+    scanf("%lf", &y2);
 
-printf("Введите координаты второй точки\n");
-printf("x:");
-scanf("%lf", &x2);
-printf("y:");
-scanf("%lf", &y2);
+    printf("Введите координаты второй точки\n");
+    printf("x:");
+    scanf("%lf", &x3);
+    printf("y:");
+    scanf("%lf", &y3);
 
-printf("Введите координаты второй точки\n");
-printf("x:");
-scanf("%lf", &x3);
-printf("y:");
-scanf("%lf", &y3);
-
-a = sqrt(pow(x2-x1,2)+pow(y2-y1,2));
-b = sqrt(pow(x3-x2,2)+pow(y3-y2,2));
-c = sqrt(pow(x1-x3,2)+pow(y1-y3,2));
-p = (a + b + c)/2;
-s = sqrt(p*(p - a)*(p - b)*(p - c));
-printf("Периметр равен %lf\n", p * 2);
-printf("Площадь треугольника равен %lf", s);
-return 0;
+    a = sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+    b = sqrt(pow(x3-x2,2)+pow(y3-y2,2));
+    c = sqrt(pow(x1-x3,2)+pow(y1-y3,2));
+    p = (a + b + c)/2;
+    s = sqrt(p*(p - a)*(p - b)*(p - c));
+    printf("Периметр равен %lf\n", p * 2);
+    printf("Площадь треугольника равен %lf", s);
+    
+   return 0;
 }
