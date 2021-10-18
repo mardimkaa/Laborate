@@ -1,0 +1,124 @@
+//задание 1
+
+#include <stdio.h>
+
+int main()
+{
+   float pi = 3.14;
+   int A;
+   printf("Введите градусную меру угла\n");
+   printf("A:");
+   scanf("%d", &A);
+   if ((A > 0) && (A < 360))
+   {
+       float rez = (A*pi)/180;
+       printf("Угол %d имеет %f радиан", A, rez);
+       return 0;
+   }
+   else
+   {
+       printf("Значение угла не удовлетворяет отрезку (0 < α < 360)");
+       return 0;
+   }
+}
+
+//задание 2
+#include <stdio.h>
+
+int main()
+{
+   float pi = 3.14;
+   float A;
+   printf("Введите радианную меру угла\n");
+   printf("A:");
+   scanf("%f", &A);
+   if ((A > 0) && (A < 2*pi))
+   {
+       float rez = (A*180)/pi;
+       printf("Угол %f имеет %f градусов", A, rez);
+       return 0;
+   }
+   else
+   {
+       printf("Значение угла не удовлетворяет отрезку (0 < α < 2·π)");
+       return 0;
+   }
+}
+
+//задание 3
+#include <stdio.h>
+
+int main()
+{
+   float X, A, Y;
+   printf("Введите вес конфет:");
+   scanf("%f",&A);
+   printf("Введите цену конфет за %f килограмм:", A);
+   scanf("%f", &X);
+   float rz = X / A;
+   printf("Один киллограмм конфет будет стоить %f рублей\n", rz);
+   printf("Введите нужное количество килограмм:");
+   scanf("%f",&Y);
+   printf("%f киллограмм будет стоить %f рублей", Y, rz * Y);
+   return 0;
+}
+
+//задание 4
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+   float V1, V2, S, T;
+   printf("Вводим скорость 1 автомобиля");
+   scanf("%f",&V1);
+   printf("вводим скорость 2 автомобиля:");
+   scanf("%f", &V2);
+   printf("Расстояние между автомобилями:");
+   scanf("%f",&S);
+   printf("Введите нужное количество часов:");
+   scanf("%f",&T);
+   S = V1 * T - V2 * T + S;
+   printf("Расстояние через %f часов сближения:%f", T, S);
+   return 0;
+}
+
+//задание 5
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+   float A, B;
+   printf("Введите коэффицент A:");
+   scanf("%f",&A);
+   printf("Введите коэффицент B:");
+   scanf("%f", &B);
+   float x = -(B/A);
+   printf("X = %f", x);
+   return 0;
+  
+}
+
+//задание 6
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+   float A1, B1, C1, A2, B2, C2;
+   printf("Введите коэффиценты A1, B1, C1:");
+   scanf("%f%f%f",&A1, &B1, &C1);
+   printf("Введите коэффиценты A2, B2, C2:");
+   scanf("%f%f%f", &A2 , &B2, &C2);
+   float x, y, D;
+   D = A1 * B2 - A2 * B1;
+   x = (C1 * B2 - C2 * B1) / D;
+   y = (A1 * C2 - A2 * C1) / D;
+   printf("X = %f\n", x);
+   printf("Y = %f", y);
+   
+   return 0;
+  
+}
