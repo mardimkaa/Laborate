@@ -78,7 +78,7 @@ int main()
    scanf("%f",&S);
    printf("Введите нужное количество часов:");
    scanf("%f",&T);
-   S = V1 * T - V2 * T + S;
+   S = V1 * T + V2 * T + S;
    printf("Расстояние через %f часов:%f километров ", T, S);
    return 0;
 }
@@ -90,6 +90,7 @@ int main()
 int main()
 {
    float A, B;
+   printf("A*x + B = 0\n");
    printf("Введите коэффицент A:");
    scanf("%f",&A);
    printf("Введите коэффицент B:");
@@ -101,24 +102,40 @@ int main()
 }
 
 //задание 6
-
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
    float A1, B1, C1, A2, B2, C2;
+   printf("Система\n");
+   printf("A1*x + B1*y = C1\n");
+   printf("A2*x + B2*y = C2\n");
    printf("Введите коэффиценты A1, B1, C1:");
    scanf("%f%f%f",&A1, &B1, &C1);
    printf("Введите коэффиценты A2, B2, C2:");
    scanf("%f%f%f", &A2 , &B2, &C2);
    float x, y, D;
    D = A1 * B2 - A2 * B1;
+   if (D == 0)
+   {
+       printf("Система не имеет решений");
+       return 0;
+   }
+   else
+   {
    x = (C1 * B2 - C2 * B1) / D;
    y = (A1 * C2 - A2 * C1) / D;
+   if (x == -0)
+   {
+       x = 0;
+   }
+   else if (y == 0);
+   {
+       y = 0;
+   }
    printf("X = %f\n", x);
    printf("Y = %f", y);
-   
    return 0;
-  
+   }
 }
