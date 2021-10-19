@@ -91,18 +91,25 @@ int main()
 }
 
 //задание 7
-#include <math.h>
 #include <stdio.h>
+
 int main()
 {
-	int A;
-	printf("Введите A:");
-	scanf("%d", &A);
-	int A1 = A * A * A;
-	int A2 = A1 * A1 * A1; 
-	A = A2 * A1 * A2 * A1;
-	printf("A^15 = %d", A);
-	
-	return 0;
-	
+    int A, k, m;
+    printf("Введите число А:");
+    scanf("%d", &A);
+    k = A * A; //вычисляем квадрат 
+
+    m = A * k; //вычисляем куб
+
+    m = k * m; //вычисляем пятую степень
+
+    k = m * m; //вычисляем десятую степень
+
+    k = k * m; //вычисляем пятнадцатую степень
+    
+    printf("А в 15 степени:%d", k);
+    return 0;
+
+
 }
