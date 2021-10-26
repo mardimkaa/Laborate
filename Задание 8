@@ -1,0 +1,93 @@
+//задание 1
+#include <stdio.h>
+int main()
+{
+double A;
+printf("Введите размер файла в байтах:");
+scanf("%lf", &A);
+A = A / 1024;
+printf("Данный фаил занимает %lf килобайт", A);
+return 0;
+}
+
+}
+//задание 2
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+int A, B, C;
+printf("Введите длинну отрезка A:");
+scanf("%d", &A);
+printf("Введите длинну отрезка B:");
+scanf("%d", &B);
+if (A < B)
+{
+printf("Введите другие числа");
+return 0;
+}
+else
+{
+C = A / B;
+printf("%d отрезков В поместяться в А", C);
+return 0;
+}
+}
+
+//задание 3;
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+int A, B, C;
+printf("Введите длинну отрезка A:");
+scanf("%d", &A);
+printf("Введите длинну отрезка B:");
+scanf("%d", &B);
+if (A < B)
+{
+printf("Введите другие числа");
+return 0;
+}
+else
+{
+C = A / B;
+C = C * B;
+C = A - C;
+printf("Размер не занятой части А равен %d", C);
+return 0;
+}
+}
+
+//задание 4
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+int A, B, C;
+printf("Введите число:");
+scanf("%d", &A);
+B = A / 10;
+C = A % 10;
+printf("%d", C*10 + B);
+return 0;
+}
+
+//задание 5
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+int A, B, C;
+printf("Введите число:");
+scanf("%d", &A);
+B = A / 100;
+C = A - B*100;
+A = C * 10 + B;
+printf("%d", A);
+}
