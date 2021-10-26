@@ -2,15 +2,24 @@
 #include <stdio.h>
 int main()
 {
-double A;
+int A;
 printf("Введите размер файла в байтах:");
-scanf("%lf", &A);
-A = A / 1024;
-printf("Данный фаил занимает %lf килобайт", A);
-return 0;
+scanf("%d", &A);
+if ((A > 1024) && (A % 1024 != 0)){
+A = A / 1024 + 1;
 }
+else if((A > 1024) && (A % 1024 == 0)){
+    A = A / 1024;
 
 }
+else{
+    A = 1;
+}
+printf("Данный фаил занимает %d килобайт", A);
+return 0;
+}
+}
+
 //задание 2
 #include <stdio.h>
 #include <math.h>
