@@ -1,0 +1,62 @@
+// задание 1
+
+#include <stdio.h>
+
+int main()
+{
+   int t, r;
+   printf("Введите количество секунд:");
+   scanf("%d", &t);
+   r = t % 60;
+   printf("С последней минуты прошло %d секунд", r);
+   return 0;
+}
+
+//задание 2
+#include <stdio.h>
+
+int main()
+{
+   int K, N;
+   printf("Введите день:");
+   scanf("%d", &K);
+   N = K % 7;
+   printf("%d", N);
+   return 0;
+}
+//задание3
+
+
+
+// задание 4
+#include <stdio.h>
+
+int main()
+{
+  int A, B, C, Sp, Sk;
+  printf("Введите размеры прямоугольника:");
+  scanf("%d\n", &A);
+  scanf("%d", &B);
+  Sp = A * B;
+  printf("Введите сторону квадрата:");
+  scanf("%d", &C);
+  Sk = C * C;
+  int rz = Sp / Sk;
+  printf("Количество квадратов, размещенных на прямоугольнике:%d\n",rz);
+  printf("Площадь незанятой части прямоугольника:%d",Sp - (rz*Sk) );
+  return 0;
+ 
+}
+// задание 5
+#include <stdio.h>
+
+int main()
+{
+  int N, A;
+  printf("Введите номер года:");
+  scanf("%d", &N);
+  A = N / 100 + 1;
+  printf("Это %d столетие", A);
+  return 0;
+ 
+}
