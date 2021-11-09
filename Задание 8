@@ -80,10 +80,14 @@ int main()
 int A, B, C;
 printf("Введите число:");
 scanf("%d", &A);
-B = A / 10;
-C = A % 10;
-printf("%d", C*10 + B);
-return 0;
+if ((A > 9) && (A < 100)){
+    B = A / 10;
+    C = A % 10;
+    printf("%d", C*10 + B);
+}
+else{
+    printf("Число не двухзнач!!");
+}
 }
 
 //задание 5
@@ -95,8 +99,15 @@ int main()
 int A, B, C;
 printf("Введите число:");
 scanf("%d", &A);
-B = A / 100;
-C = A - B*100;
-A = C * 10 + B;
-printf("%d", A);
+if ((99 < A) && (A < 1000)){
+    B = A / 100;
+    C = A - B*100;
+    A = C * 10 + B;
+    printf("%d", A);
+    return 0;
+}
+else{
+    printf("Число не трехзначное");
+    return 0;
+}
 }
