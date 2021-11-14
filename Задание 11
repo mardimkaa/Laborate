@@ -1,208 +1,179 @@
-// задание 1
-#include <stdio.h>
-
-int main()
-{
-    int A, B;
-    printf("Введите А:");
-    scanf("%d", &A);
-    printf("Введите B:");
-    scanf("%d", &B);
-    if (A > B){
-        B = A;
-        printf("A = %d, B = %d", A, B);
-        return 0;
-    }
-    if (B>A){
-        A = B;
-        printf("A = %d, B = %d", A, B);
-        return 0;
-    }
-    else{
-        A = 0;
-        B = 0;
-        printf("A = %d, B = %d", A, B);
-        return 0;
-    }
-}
-
-//задание 2
-#include <stdio.h>
-
-int main()
-{
-    int A, B, C;
-    printf("Введите А:");
-    scanf("%d", &A);
-    printf("Введите B:");
-    scanf("%d", &B);
-    printf("Введите C:");
-    scanf("%d", &C);
-    if ((A > C) && (B > C)){
-        printf("A + B = %d", A + B);
-        return 0;
-    }
-    if ((B>A) && (C>A)){
-        printf("C + B = %d", C + B);
-        return 0;
-    }
-    if ((A > B) && (C>B)){
-        printf("A + C = %d", A + C);
-        return 0;
-    }
-}
-
-// задание 3
 #include <stdio.h>
 #include <math.h>
-
 int main()
 {
-    int x1,x2,x3,y1,y2,y3;
-    int AB, AC;
-    printf("Введите координаты первой точки:");
-    scanf("%d%d", &x1, &y1);
-    printf("Введите координаты второй точки:");
-    scanf("%d%d", &x2, &y2);
-    printf("Введите координаты третьей точки:");
-    scanf("%d%d", &x3, &y3);
-    AB = sqrt(pow(x2-x1,2) + pow(y2-y1, 2));
-    AC = sqrt(pow(x3-x1,2) + pow(y3-y1, 2));
-    if (AB < AC){
-        printf("Точка В ближе к А\nРасстояние между ними %d", AB);
-        return 0;
-    }
-    else{
-        printf("Точка C ближе к А\nРасстояние между ними %d", AC);
-        return 0;
-    }
-    
-}
-
-//задание 4
-#include <stdio.h>
-#include <math.h>
-
-int main()
-{
-    int x1,y1;
-    printf("Введите координаты точки:");
-    scanf("%d%d", &x1, &y1);
-    if ((x1 == 0) || (y1 == 0)){
-        printf("Точка находится на оси координат");
-        return 0;
-    }
-    if ((x1 > 0) && (y1 > 0)){
-        printf("Точка находится в 1 четверти");
-        return 0;
-    }
-    if ((x1 < 0) && (y1 > 0)){
-        printf("Точка находится во 2 четверти");
-        return 0;
-    }
-    if ((x1 < 0) && (y1 < 0)){
-        printf("Точка находится в 3 четверти");
-        return 0;
-    }
-    if ((x1 > 0) && (y1 < 0)){
-        printf("Точка находится в 4 четверти");
-        return 0;
-    }
-}
-
-//задание 5
-#include <stdio.h>
-#include <math.h>
-
-int main()
-{
-    int x;
-    printf("Введите число:");
-    scanf("%d", &x);
-    if (x > 0){
-        if (x % 2 == 0){
-            printf("Положительное четное число");
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+        if (N == 1) {
+        int A, B;
+        printf("Введите А:");
+        scanf("%d", &A);
+        printf("Введите B:");
+        scanf("%d", &B);
+        if (A > B){
+            B = A;
+            printf("A = %d, B = %d", A, B);
+            return 0;
+        }
+        if (B>A){
+            A = B;
+            printf("A = %d, B = %d", A, B);
             return 0;
         }
         else{
-            printf("Положительное нечетное число");
+            A = 0;
+            B = 0;
+            printf("A = %d, B = %d", A, B);
             return 0;
         }
-        
     }
-    
-    if (x == 0){
-        printf("Нулевое число");
-        return 0;
-    }
-    
-    
-    
-    else{
-        if (x % 2 == 0){
-            printf("Отрицательное четное число");
-            return 0;
-        }
-        
-        else{
-            printf("Отрицательное нечетное число");
-            return 0;
-        }
-        
-    }
-    
-}
 
-//задание 6
-#include <stdio.h>
-#include <math.h>
+    if (N == 2) {
+        int A, B, C;
+        printf("Введите А:");
+        scanf("%d", &A);
+        printf("Введите B:");
+        scanf("%d", &B);
+        printf("Введите C:");
+        scanf("%d", &C);
+        if ((A > C) && (B > C)){
+            printf("A + B = %d", A + B);
+            return 0;
+        }
+        if ((B>A) && (C>A)){
+            printf("C + B = %d", C + B);
+            return 0;
+        }
+        if ((A > B) && (C>B)){
+            printf("A + C = %d", A + C);
+            return 0;
+        }
+    }
 
-int main()
-{
-    int x;
-    printf("Введите число:");
-    scanf("%d", &x);
-    if ((x >= 1) && (x <= 9)){
-        if (x % 2 == 0){
-            printf("четное однозначное число");
+    if (N == 3) {
+        int x1,x2,x3,y1,y2,y3;
+        int AB, AC;
+        printf("Введите координаты первой точки:");
+        scanf("%d%d", &x1, &y1);
+        printf("Введите координаты второй точки:");
+        scanf("%d%d", &x2, &y2);
+        printf("Введите координаты третьей точки:");
+        scanf("%d%d", &x3, &y3);
+        AB = sqrt(pow(x2-x1,2) + pow(y2-y1, 2));
+        AC = sqrt(pow(x3-x1,2) + pow(y3-y1, 2));
+        if (AB < AC){
+            printf("Точка В ближе к А\nРасстояние между ними %d", AB);
             return 0;
         }
         else{
-            printf("нечетное однозначное число");
+            printf("Точка C ближе к А\nРасстояние между ними %d", AC);
             return 0;
         }
-        
     }
-    
-    
-    if ((x >= 10) && (x <= 99)){
-        if (x % 2 == 0){
-            printf("четное двухзначное число");
+
+    if (N == 4) {
+        int x1,y1;
+        printf("Введите координаты точки:");
+        scanf("%d%d", &x1, &y1);
+        if ((x1 == 0) || (y1 == 0)){
+            printf("Точка находится на оси координат");
+            return 0;
+        }
+        if ((x1 > 0) && (y1 > 0)){
+            printf("Точка находится в 1 четверти");
+            return 0;
+        }
+        if ((x1 < 0) && (y1 > 0)){
+            printf("Точка находится во 2 четверти");
+            return 0;
+        }
+        if ((x1 < 0) && (y1 < 0)){
+            printf("Точка находится в 3 четверти");
+            return 0;
+        }
+        if ((x1 > 0) && (y1 < 0)){
+            printf("Точка находится в 4 четверти");
+            return 0;
+        }
+    }
+
+    if (N == 5){
+        int x;
+        printf("Введите число:");
+        scanf("%d", &x);
+        if (x > 0){
+            if (x % 2 == 0){
+                printf("Положительное четное число");
+                return 0;
+            }
+            else{
+                printf("Положительное нечетное число");
+                return 0;
+            }
+            
+        }
+        
+        if (x == 0){
+            printf("Нулевое число");
             return 0;
         }
         else{
-            printf("нечетное двухзначное число");
-            return 0;
-        }
-        
-    }
+            if (x % 2 == 0){
+                printf("Отрицательное четное число");
+                return 0;
+            }
+            
+            else{
+                printf("Отрицательное нечетное число");
+                return 0;
+            }
+            
     
-    if ((x >= 100) && (x <= 999)){
-        if (x % 2 == 0){
-            printf("четное трехзначное число");
-            return 0;
         }
-        
+    }
+    if (N == 6){
+        int x;
+        printf("Введите число:");
+        scanf("%d", &x);
+        if ((x >= 1) && (x <= 9)){
+            if (x % 2 == 0){
+                printf("четное однозначное число");
+                return 0;
+            }
+            else{
+                printf("нечетное однозначное число");
+                return 0;
+            }
+            
+        }
+        if ((x >= 10) && (x <= 99)){
+            if (x % 2 == 0){
+                printf("четное двухзначное число");
+                return 0;
+            }
+            else{
+                printf("нечетное двухзначное число");
+                return 0;
+            }
+            
+        }
+        if ((x >= 100) && (x <= 999)){
+            if (x % 2 == 0){
+                printf("четное трехзначное число");
+                return 0;
+            }
+            
+            else{
+                printf("нечетное трехзнач число");
+                return 0;
+            }
+            
+        }
         else{
-            printf("нечетное трехзнач число");
+            printf("Выходит за пределы диапозона");
             return 0;
         }
-        
-    }
     
-    else{
-        printf("Выходит за пределы диапозона");
-        return 0;
     }
-    
 }
