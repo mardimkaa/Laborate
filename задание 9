@@ -1,82 +1,69 @@
-// задание 1
-
 #include <stdio.h>
-
+#include <math.h>
 int main()
 {
-   int t, r;
-   printf("Введите количество секунд:");
-   scanf("%d", &t);
-   r = t % 60;
-   printf("С последней минуты прошло %d секунд", r);
-   return 0;
-}
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+    if (N == 1) {
+        int t, r;
+        printf("Введите количество секунд:");
+        scanf("%d", &t);
+        r = t % 60;
+        printf("С последней минуты прошло %d секунд", r);
+        return 0;
+    }
 
-//задание 2
-#include <stdio.h>
+    if (N == 2) {
+        int K, N;
+        printf("Введите день:");
+        scanf("%d", &K);
+        N = K % 7;
+        printf("%d", N);
+        return 0;
+    }
 
-int main()
-{
-   int K, N;
-   printf("Введите день:");
-   scanf("%d", &K);
-   N = K % 7;
-   printf("%d", N);
-   return 0;
-}
-//задание3
- #include <stdio.h>
+    if (N == 3) {
+        int K, N;
+        printf("Введите день года:");
+        scanf("%d", &K);
+        printf("Введите номер дня недели для 1-го января:");
+        scanf("%d", &N);
+        N = (K + N - 2) % 7 + 1;
+        printf("Номер дня недели для K-го года = %d", N);
+        return 0;
+    }
 
-int main()
-{
-   int K, N;
-   printf("Введите день года:");
-   scanf("%d", &K);
-   printf("Введите номер дня недели для 1-го января:");
-   scanf("%d", &N);
-   N = (K + N - 2) % 7 + 1;
-   printf("Номер дня недели для K-го года = %d", N);
-   return 0;
-}
-
-
-// задание 4
-#include <stdio.h>
-
-int main()
-{
-  int A, B, C, Sp, Sk, a, b;
-  printf("Введите размеры прямоугольника:");
-  scanf("%d\n", &A);
-  scanf("%d", &B);
-  printf("Введите сторону квадрата:");
-  scanf("%d", &C);
-  if ((C <= A) && (C <= B)){
-      a = A / C;
-      b = B / C;
-      Sp = a * b;
-      Sk = (A * B) - (Sp * C * C);
+    if (N == 4) {
+      int A, B, C, Sp, Sk, a, b;
+      printf("Введите размеры прямоугольника:");
+      scanf("%d\n", &A);
+      scanf("%d", &B);
+      printf("Введите сторону квадрата:");
+      scanf("%d", &C);
+      if ((C <= A) && (C <= B)){
+          a = A / C;
+          b = B / C;
+          Sp = a * b;
+          Sk = (A * B) - (Sp * C * C);
       printf("Количество квадратов, размещенных на прямоугольнике:%d\n",Sp);
       printf("Площадь незанятой части прямоугольника:%d", Sk);
       
       return 0;
+      }
+      else{
+          printf("Невозможно разместить хотя бы один квадрат");
+          return 0;
   }
-  else{
-      printf("Невозможно разместить хотя бы один квадрат");
-      return 0;
-  }
- 
-}
-// задание 5
-#include <stdio.h>
+    }
 
-int main()
-{
-  int N, A;
-  printf("Введите номер года:");
-  scanf("%d", &N);
-  A = N / 100 + 1;
-  printf("Это %d столетие", A);
-  return 0;
- 
+    if (N == 5) {
+        int N, A;
+        printf("Введите номер года:");
+        scanf("%d", &N);
+        A = N / 100 + 1;
+        printf("Это %d столетие", A);
+        return 0;
+    }
+
 }
