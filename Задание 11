@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 int main()
 {
     int N;
@@ -52,24 +53,28 @@ int main()
     }
 
     if (N == 3) {
-        int x1,x2,x3,y1,y2,y3;
-        int AB, AC;
-        printf("Введите координаты первой точки:");
-        scanf("%d%d", &x1, &y1);
-        printf("Введите координаты второй точки:");
-        scanf("%d%d", &x2, &y2);
-        printf("Введите координаты третьей точки:");
-        scanf("%d%d", &x3, &y3);
-        AB = sqrt(pow(x2-x1,2) + pow(y2-y1, 2));
-        AC = sqrt(pow(x3-x1,2) + pow(y3-y1, 2));
-        if (AB < AC){
-            printf("Точка В ближе к А\nРасстояние между ними %d", AB);
-            return 0;
-        }
-        else{
-            printf("Точка C ближе к А\nРасстояние между ними %d", AC);
-            return 0;
-        }
+            int a, b, c;
+            printf("A:");
+            scanf ("%d", &a);
+            printf("B:");
+            scanf ("%d", &b);
+            printf("C:");
+            scanf ("%d", &c);
+            int ab = abs(a - b);
+            int ac = abs(a - c);
+            if (ab < ac){
+                printf("Точка В ближе к А. Расстояние равно %d", ab);
+                return 0;
+            }
+            if(ac < ab){
+                printf("Точка C ближе к А. Расстояние равно %d", ac);
+                return 0;
+            }
+            if(ab == ac){
+               printf("Точки B и С равноудалены от точки A");
+               return 0;
+            }
+        
     }
 
     if (N == 4) {
