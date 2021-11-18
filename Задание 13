@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+        if (N == 1) {
+
+                 float c;
+                 printf("введите цену за 1 килограм конфет\n");
+                 scanf ("%f", &c);
+
+                 float m;
+                  for  (m = 0.1; m<1.1;  m+=0.1)
+                      printf("%f килограмм будут стоить %f \n ",m,c*m);
+                 return 0;
+    }
+
+    if (N == 2) {
+
+          int n;
+          printf("введите число N:");
+          scanf ("%i", &n);
+
+          float rez=1;
+          int i;
+          for (i =0; i<=n; ++i)
+              rez *= 1.0+(float)i/10;
+
+          printf("%f \n ",rez);
+          return 0;
+    }
+
+    if (N == 3) {
+               int n;
+               printf("введите число N:");
+               scanf ("%i", &n);
+
+               int rez=0;
+               int i;
+               for  (i =1; i<=(2*n-1); i+=2){
+                 rez += i;
+                 printf("%i \n ",rez);
+              }
+               return 0;
+    }
+
+    if (N == 4) {
+       int n;
+       printf("N:");
+       scanf ("%i", &n);
+
+       int a;
+       printf("Введите число А:");
+       scanf ("%i", &a);
+
+       int rez=0;
+       int i;
+       for  (i = 0; i<=n; i++){
+         rez = rez + pow(a,i);
+         printf("%i \n ",rez);
+      }
+       return 0;
+    }
+
+    if (N == 5){
+        float a;
+        printf("A:");
+        scanf ("%f", &a);
+
+        int n;
+       printf("N:");
+       scanf ("%i", &n);
+
+
+       float a2=1,rez=1;
+       int i;
+
+       for  (i =2; i<=n; ++i)
+       {
+          a2*=-a;
+          rez +=a2;
+       }
+       printf("%f \n ",rez);
+       return 0;
+    }
+}
