@@ -1,0 +1,116 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+    if (N == 1) {
+        printf("Введите числа A и B (A < B)\n");
+        int A, B;
+        scanf("%d", &A);
+        scanf("%d", &B);
+        int i = A;
+        if(A < B){
+            for (i; i <= B; i++)
+            {
+                  for (int j = 0; j < i; j++)
+                  {
+                      printf("%d", i);
+                  }
+         
+            }
+            
+        }
+        else{
+            printf("A > B");
+            return 0;
+        }
+    }
+
+    if (N == 2) {
+        printf("Введите числа A и B (A > B)\n");
+        int A, B;
+        scanf("%d", &A);
+        scanf("%d", &B);
+        if(A > B){
+            while(A > B){
+                A -= B;
+            }
+            
+            printf("Размер незанятой части равен %d", A);
+            return 0;
+        }
+        else{
+            printf("A < B");
+            return 0;
+        }
+    }
+
+    if (N == 3) {
+       int n;
+       printf("введите N:");
+       scanf ("%i", &n);
+       int k=0, temp=0;
+       while (temp<n) {
+            ++k;
+            temp+=k;
+       }
+       printf("K: %i\nСумма:%i\n",k,temp);
+       return 0;
+    }
+
+    if (N == 4) {
+       float P;
+       printf("Введите процентную ставку:");
+       scanf ("%f", &P);
+       float S = 1000;
+       int k = 0;
+       if((P > 0)||(P < 25)){
+           while(S < 1100){
+               k++;
+               S = S + S*P/100;
+           }
+           printf("Черех %d месяцев размер вклада станет %f", k, S);
+           return 0;
+           }
+        else{
+            printf("Введите другую процентную ставку");
+            return 0;
+        }
+       
+    }
+
+    if (N == 5){
+        printf("Введите числа A и B\n");
+        int A, B;
+        scanf("%d", &A);
+        scanf("%d", &B);
+        while (A != B) {
+        if (A > B){
+           A = A - B;
+        }
+        else{
+          B = B - A;
+           }
+        }
+        printf("НОД = %d", A);
+        return 0;
+    }
+    if(N == 6){
+       int n;
+       printf("N:");
+       scanf("%i",&n);
+       int f1=1,f2=1,f=0,k=2;
+     
+       while (f<n){
+           ++k;
+           f=f2+f1;
+           f2=f1;
+           f1=f;
+       }
+       printf("K:%i\n",k);
+       return 0;
+    }
+}
