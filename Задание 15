@@ -39,6 +39,13 @@ int quarter(int x, int y){
         }
 }
 
+double Fact2(int N){
+   double ff = 1;
+   for(; N>1; N-=2)
+    ff *= N;
+   printf("%lf", ff);
+}
+
 int main()
 {
     int N;
@@ -93,34 +100,11 @@ int main()
     }
 
     if (N == 5){
-        printf("Введите числа A и B\n");
-        int A, B;
-        scanf("%d", &A);
-        scanf("%d", &B);
-        while (A != B) {
-        if (A > B){
-           A = A - B;
-        }
-        else{
-          B = B - A;
-           }
-        }
-        printf("НОД = %d", A);
+        int N;
+        printf("Введите число N:\n");
+        scanf("%d", &N);
+        Fact2(N);
         return 0;
     }
-    if(N == 6){
-       int n;
-       printf("N:");
-       scanf("%i",&n);
-       int f1=1,f2=1,f=0,k=2;
-     
-       while (f<n){
-           ++k;
-           f=f2+f1;
-           f2=f1;
-           f1=f;
-       }
-       printf("K:%i\n",k);
-       return 0;
-    }
+
 }
