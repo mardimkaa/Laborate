@@ -1,0 +1,126 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+double PowerA3(double A){
+      return A*A*A;
+}
+
+int sing(float x){
+    if(x < 0){
+        return -1;
+    }
+    if(x == 0){
+        return 0;
+    }
+    if (x > 0){
+        return -1;
+    }
+}
+
+float rings(float r1, float r2){
+   return 3.14*(r1*r1-r2*r2);
+}
+
+int quarter(int x, int y){
+        if ((x == 0) || (y == 0)){
+            printf("Точка находится на оси координат");
+        }
+        if ((x > 0) && (y > 0)){
+            printf("Точка находится в 1 четверти");
+        }
+        if ((x < 0) && (y > 0)){
+            printf("Точка находится во 2 четверти");
+        }
+        if ((x < 0) && (y < 0)){
+            printf("Точка находится в 3 четверти");
+        }
+        if ((x > 0) && (y < 0)){
+            printf("Точка находится в 4 четверти");
+        }
+}
+
+int main()
+{
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+    if (N == 1) {
+    double A, B;
+    for(int i = 0; i < 5;i++){
+        printf("Введите число:");
+        scanf("%lf", &A);
+        B = PowerA3(A);
+        printf("A в 3 степени = %lf\n", B);
+    }
+    }
+
+    if (N == 2) {
+        float A, B;
+        printf("Введите число A:");
+        scanf("%f", &A);
+        printf("Введите число B:");
+        scanf("%f", &B);
+        printf("sing(A) + sing(B) = %i", sing(A) + sing(B));
+        return 0;
+    }
+
+    if (N == 3) {
+        int i;
+        for(i=1; i<=3; ++i){
+        float r1,r2;
+        printf("R1:");
+        scanf("%f", &r1);
+        printf("R2:");
+        scanf("%f", &r2);
+        if(r1 > r2){
+            printf("Площадь равна:%f\n",rings(r1,r2));
+        }
+        else{
+            printf("Введите другие числа!");
+        }
+        
+    }
+    return 0;
+    }
+
+    if (N == 4) {
+        int x,y;
+        printf("Введите координаты точки:");
+        scanf("%d%d", &x, &y);
+        quarter(x,y);
+        return 0;
+       
+    }
+
+    if (N == 5){
+        printf("Введите числа A и B\n");
+        int A, B;
+        scanf("%d", &A);
+        scanf("%d", &B);
+        while (A != B) {
+        if (A > B){
+           A = A - B;
+        }
+        else{
+          B = B - A;
+           }
+        }
+        printf("НОД = %d", A);
+        return 0;
+    }
+    if(N == 6){
+       int n;
+       printf("N:");
+       scanf("%i",&n);
+       int f1=1,f2=1,f=0,k=2;
+     
+       while (f<n){
+           ++k;
+           f=f2+f1;
+           f2=f1;
+           f1=f;
+       }
+       printf("K:%i\n",k);
+       return 0;
+    }
+}
