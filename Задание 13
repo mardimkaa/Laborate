@@ -8,29 +8,36 @@ int main()
     scanf("%d", &N);
         if (N == 1) {
 
-                 float c;
+                 double c;
                  printf("введите цену за 1 килограм конфет\n");
-                 scanf ("%f", &c);
+                 scanf ("%lf", &c);
 
-                 float m;
+                 double m;
                   for  (m = 0.1; m<1.1;  m+=0.1)
-                      printf("%f килограмм будут стоить %f \n ",m,c*m);
+                      printf("%lf килограмм будут стоить %f \n ",m,c*m);
                  return 0;
     }
 
     if (N == 2) {
 
-          int n;
-          printf("введите число N:");
-          scanf ("%i", &n);
+        int n;
+        printf("введите число N:");
+        scanf ("%i", &n);
 
+        if(n > 0){
           float rez=1;
           int i;
           for (i =0; i<=n; ++i)
-              rez *= 1.0+(float)i/10;
+            rez *= 1.0+(float)i/10;
 
           printf("%f \n ",rez);
           return 0;
+        }
+        else{
+            printf("введите другое число");
+            return 0;
+        }
+        
     }
 
     if (N == 3) {
@@ -42,8 +49,8 @@ int main()
                int i;
                for  (i =1; i<=(2*n-1); i+=2){
                  rez += i;
-                 printf("%i \n ",rez);
               }
+               printf("Квадрат числа равен %d", rez);
                return 0;
     }
 
@@ -51,7 +58,7 @@ int main()
        int n;
        printf("N:");
        scanf ("%i", &n);
-
+       if(N > 0){
        int a;
        printf("Введите число А:");
        scanf ("%i", &a);
@@ -63,6 +70,11 @@ int main()
          printf("%i \n ",rez);
       }
        return 0;
+       }
+       else{
+           printf("Введите другое число!");
+           return 0;
+       }
     }
 
     if (N == 5){
@@ -73,9 +85,8 @@ int main()
         int n;
        printf("N:");
        scanf ("%i", &n);
-
-
-       float a2=1,rez=1;
+       if(N > 0){
+        float a2=1,rez=1;
        int i;
 
        for  (i =2; i<=n; ++i)
@@ -85,5 +96,11 @@ int main()
        }
        printf("%f \n ",rez);
        return 0;
+       }
+       else{
+           printf("Введите другое число!");
+           return 0;
+       }
+
     }
 }
