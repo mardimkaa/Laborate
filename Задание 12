@@ -21,18 +21,74 @@ int main()
     }
 
     if (N == 2) {
+       int n;
+       char c;
+       printf("Направление:");
+       scanf("%c", &c);
+       printf("Команда (0 — продолжать движение, 1 — поворот налево, −1 — поворот направо):");
+       scanf("%d", &n);
 
-          int n;
-          printf("введите число N:");
-          scanf ("%i", &n);
+       switch (n) {
+           case 0:
+           {
+               switch (c)
+               {
+                   case 'N':
+                   printf("North");
+                   break;
+                   case 'S':
+                   printf("South");
+                   break;
+                   case 'E':
+                   printf("East");
+                   break;
+                   case 'W':
+                   printf("West");
+                   break;
+               }
+           }
+           break;
+           case -1:
+           {
+               switch (c)
+               {
+                   case 'N':
+                   printf("East");
+                   break;
+                   case 'S':
+                   printf("West");
+                   break;
+                   case 'E':
+                   printf("South");
+                   break;
+                   case 'W':
+                   printf("North");
+                   break;
+               }
+           }
+           break;
+           case 1:
+           {
+                switch (c)
+               {
+                   case 'N':
+                   printf("West");
+                   break;
+                   case 'S':
+                   printf("East");
+                   break;
+                   case 'E':
+                   printf("North");
+                   break;
+                   case 'W':
+                   printf("South");
+                   break;
+               }
+           }
+           break;
+       }
 
-          float rez=1;
-          int i;
-          for (i =0; i<=n; ++i)
-              rez *= 1.0+(float)i/10;
-
-          printf("%f \n ",rez);
-          return 0;
+       return 0;
     }
 
     if (N == 3) {
@@ -144,9 +200,8 @@ int main()
    }
     
 }
-    }
 
-    if (N == 4) {
+    if (N == 4){
        int n;
        printf("Число:") ;
        scanf ("%i", &n);
