@@ -67,12 +67,12 @@ int main()
        scanf ("%f", &P);
        float S = 1000;
        int k = 0;
-       if((P > 0)||(P < 25)){
+       if((P > 0)&&(P < 25)){
            while(S < 1100){
                k++;
                S = S + S*P/100;
            }
-           printf("Черех %d месяцев размер вклада станет %f", k, S);
+           printf("Через %d месяцев размер вклада станет %f", k, S);
            return 0;
            }
         else{
