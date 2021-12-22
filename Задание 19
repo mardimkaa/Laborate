@@ -81,40 +81,28 @@ int main()
         scanf("%i",&a[i]);
     }
  
-    int min,max;
  
-    for (max=0, i=1; i<n; i++)
-    {
-        if (a[i] < a[max]){
-          max = a[i]; 
-        } 
-    }
-    printf("%i%i", min, max);
-    int c[n+2];
+    int minx = 0,maxx = 0;
     for (i=0; i<n; ++i){
-        for(int g = 0; g < n + 2; g++){
-            if(a[i] == min){
-                a[g] = 0;
-                a[g+1] = a[i];
-                g++;
-            }
-            if(a[i] == max){
-                a[g+1] = 0;
-                a[g] = a[i];
-                g++;
-            }
-            else{
-                a[g] = a[i];
-            }
-            
+        if (a[minx]>a[i]) {
+            minx=i;
+        }
+        if  (a[maxx]<a[i]){
+            maxx=i;
         }
     }
     
-    
-    printf("Вывод\n");
-            for (i = 0; i<n; i++)
-            printf("%d\n", c[i]);
+    if (maxx>minx) maxx++;
  
+    n++;
+    for (i=n-1; i>=minx; --i) a[i]=a[i-1];
+    a[minx]=0;
+ 
+    n++;
+    for (i=n-1; i>maxx+1; --i) a[i]=a[i-1];
+    a[maxx+1]=0;
+ 
+    for (i=0; i<n; ++i) printf("a[%i] : %i\n",i,a[i]);
  
     return 0;
     }
@@ -131,5 +119,43 @@ int main()
             printf("a[%i] : ",i);
             scanf("%i",&a[i]);
         }
-}
+        int i2;
+        for (i=n-1; i>=0; --i){
+            if (a[i]<0){
+                ++n;
+                for(i2=n; i2>i; --i2) a[i2]=a[i2-1];
+                a[i+1]=0;
+            }
+        }
+        printf("вывод\n");
+        for (i=0; i<n; ++i) printf("a[%i] : %i\n",i,a[i]);
+ 
+         return 0;
+    }
+    
+    if (N == 5){
+        int n;
+
+        printf("N: ");
+        scanf("%i",&n);
+        int a[n];
+
+        int i;
+        for (i=0; i<n; ++i){
+            printf("a[%i] : ",i);
+            scanf("%i",&a[i]);
+        }
+        int i2;
+        for (i=n-1; i>=0; --i){
+            if (a[i]>0){
+                ++n;
+                for(i2=n-1; i2>i; --i2) a[i2]=a[i2-1];
+                a[i]=0;
+            }
+        }
+        printf("вывод\n");
+        for (i=0; i<n; ++i) printf("a[%i] : %i\n",i,a[i]);
+ 
+         return 0;
+    }
 }
