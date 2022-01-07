@@ -1,0 +1,263 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N;
+    printf("Введите номер задания:");
+    scanf("%d", &N);
+        if (N == 1) {
+         int mat[10][10];
+        int m,n;
+     
+        printf("M: ");
+        scanf("%i",&m);
+        printf("N: ");
+        scanf("%i",&n);
+     
+     
+        int i,j;
+        for (i=0; i<m; ++i){
+            printf("%i : \n", i+1);
+            for (j=0; j<n; ++j){
+                printf("%i : ", j+1);
+                scanf("%i", &mat[i][j]);
+            }
+        }
+        
+        printf("Исходная Матрица\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("%d  ", mat[i][j]);
+            }
+            printf("\n");
+        }
+ 
+    int min = 0, max = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (mat[i][min] > mat[i][j])
+            {
+                min = j;
+            }
+            if (mat[i][max] < mat[i][j])
+            {
+                max = j;
+            }
+        }
+        int temp = mat[i][min];
+        mat[i][min] = mat[i][max];
+        mat[i][max] = temp;
+    }
+ 
+    printf("После выполнения программы\n");
+ 
+    for (int i=0; i<m; ++i){
+        for (int j=0; j<n; ++j) printf("%i  ", mat[i][j]);
+        printf("\n");
+    }
+ 
+    return 0;
+}
+
+    if (N == 2) {
+
+        int a[10][10];
+        int m,n;
+     
+        printf("M: ");
+        scanf("%i",&m);
+        printf("N: ");
+        scanf("%i",&n);
+     
+     
+        int i,j;
+        for (i=0; i<m; ++i){
+            printf("%i : \n", i+1);
+            for (j=0; j<n; ++j){
+                printf("%i : ", j+1);
+                scanf("%i", &a[i][j]);
+            }
+        }
+        
+        printf("Исходная Матрица\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("%d  ", a[i][j]);
+            }
+            printf("\n");
+        }
+        
+       int maxI=1, maxJ=1, minI=1, minJ=1;
+ 
+    for (j=0; j<n; ++j){
+        for (i=0; i<m; ++i){
+            if (a[i][j]>a[maxI][maxJ]) {
+                maxI=i;
+                maxJ=j;
+            }
+            if (a[i][j]<a[minI][minJ]){
+                minI=i;
+                minJ=j;
+            }
+       }
+    }
+ 
+    if (minJ!=maxJ)
+      for (int i=0;i<n;++i){
+          int temp = a[i][minJ];
+          a[i][minJ] = a[i][maxJ];
+          a[i][maxJ] = temp;
+      }
+      printf("После выполнения программы\n");
+ 
+    for (int i=0; i<m; ++i){
+        for (int j=0; j<n; ++j) printf("%i  ", a[i][j]);
+        printf("\n");
+    }
+    return 0;
+        
+        
+        
+    }
+
+    if (N == 3) {
+        int a[10][10];
+        int m,n;
+     
+        printf("M: ");
+        scanf("%i",&m);
+        printf("N: ");
+        scanf("%i",&n);
+     
+     
+        int i,j;
+        for (i=0; i<m; ++i){
+            printf("%i : \n", i+1);
+            for (j=0; j<n; ++j){
+                printf("%i : ", j+1);
+                scanf("%i", &a[i][j]);
+            }
+        }
+        
+        printf("Исходная Матрица\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("%d  ", a[i][j]);
+            }
+            printf("\n");
+        }
+        int d = (int)n / 2;
+        int p = (int)m / 2;
+        
+        for(i = 0; i < d ; i++){
+            for(j = 0; j < p; j++){
+                int tmp = a[i][j];
+                a[i][j] = a[p+i][d+j];
+                a[p+i][d+j] = tmp;
+            }
+        }
+        printf("После выполнения программы\n");
+     
+        for (int i=0; i<m; ++i){
+            for (int j=0; j<n; ++j) printf("%i  ", a[i][j]);
+            printf("\n");
+        }
+        return 0;
+    }
+
+    if (N == 4) {
+       int a[10][10];
+        int m,n;
+     
+        printf("M: ");
+        scanf("%i",&m);
+        printf("N: ");
+        scanf("%i",&n);
+     
+     
+        int i,j;
+        for (i=0; i<m; ++i){
+            printf("%i : \n", i+1);
+            for (j=0; j<n; ++j){
+                printf("%i : ", j+1);
+                scanf("%i", &a[i][j]);
+            }
+        }
+        
+        printf("Исходная Матрица\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("%d  ", a[i][j]);
+            }
+            printf("\n");
+        }
+        
+        for(i = 1; i < m-1; i++){
+            for(int k = i + 1; k < m; k++){
+                if(a[i][1] > a[k][1]){
+                    for(int j = 1; j < n; j++){
+                        int temp = a[i][j];
+                        a[i][j] = a[k][j];
+                        a[k][j] = temp;
+                    }
+                }
+            }
+        }
+        printf("После выполнения программы\n");
+     
+        for (int i=0; i<m; ++i){
+            for (int j=0; j<n; ++j) printf("%i  ", a[i][j]);
+            printf("\n");
+        }
+        return 0;
+
+    }
+
+    if (N == 5){
+        int m, n;
+         
+        printf("Введите m: ");
+        scanf("%i",&m);
+        
+        printf("Введите n: ");
+        scanf("%i",&n);
+        
+        int a[m][n];
+        printf("Заполните матрицу\n");
+        
+        for(int i = 0; i < m; ++i){
+           for(int j = 0; j < n; ++j){
+               scanf("%d", &a[i][j]);
+           }
+        }
+        int Num;
+        for(int j = 1; j < n; j++){
+            Num = 0;
+            for(int i = 1; i < m; i++){
+                if(a[i][j] % 2 != 0){
+                    Num++;
+                }
+                if(Num == 0){
+                printf("0");
+                }
+                if(Num == n){
+                    printf("%d", Num);
+                    break;
+                }
+            }
+
+        }
+    }
+}
