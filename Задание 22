@@ -226,38 +226,48 @@ int main()
     }
 
     if (N == 5){
-        int m, n;
-         
-        printf("Введите m: ");
+        int a[10][10];
+        int m,n, sum;
+     
+        printf("M: ");
         scanf("%i",&m);
-        
-        printf("Введите n: ");
+        printf("N: ");
         scanf("%i",&n);
-        
-        int a[m][n];
-        printf("Заполните матрицу\n");
-        
-        for(int i = 0; i < m; ++i){
-           for(int j = 0; j < n; ++j){
-               scanf("%d", &a[i][j]);
-           }
-        }
-        int Num;
-        for(int j = 1; j < n; j++){
-            Num = 0;
-            for(int i = 1; i < m; i++){
-                if(a[i][j] % 2 != 0){
-                    Num++;
-                }
-                if(Num == 0){
-                printf("0");
-                }
-                if(Num == n){
-                    printf("%d", Num);
-                    break;
-                }
+     
+     
+        int i,j;
+        for (i=0; i<m; ++i){
+            printf("%i : \n", i+1);
+            for (j=0; j<n; ++j){
+                printf("%i : ", j+1);
+                scanf("%i", &a[i][j]);
             }
-
+        }
+        
+        printf("Исходная Матрица\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("%d  ", a[i][j]);
+            }
+            printf("\n");
+        }
+        for(int j=1; j < m-1; j++){
+           sum=0;
+           for(int i=1;j < i; i++){
+             sum = sum+a[i][m-(j-i)];
+            }
+           printf("Сумма %d", sum);
+         }
+         
+         for(j=m-1;j > 1; j--){
+           sum=0;
+           for(int i=1;i < j; i++){
+            
+             sum = sum+a[m-(j-i)][i];
+           }
+           printf("Сумма %d\n", sum);
         }
     }
 }
