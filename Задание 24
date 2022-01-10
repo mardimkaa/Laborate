@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+int main()
+{
+    int N;
+    printf("Введите номер задания");
+    scanf("%d", &N);
+    if (N == 1) {
+        char s[31] = "";
+        printf("Введите строку: ");
+        scanf("%s",s);
+        int c;
+        int n = strlen(s);
+        printf("%d", n);
+        for (int i=0; i<n; i++)
+            {
+                if(s[i] == ' '){
+                    c++;
+                }
+            }
+        printf("%d", c + 1);
+    }
+
+    if (N == 2) {
+        char str[31] = "";
+        printf("Введите строку: ");
+        scanf("%s",str);
+        int n = strlen(str);
+        for(int i = 0; i < n; i++){
+            printf("%c", str[i]);
+            printf(" ");
+        }
+    }
+
+    if (N == 3) {
+        char s[31] = "";
+        printf("Введите строку: ");
+        scanf("%s",s);
+        int n = strlen(s);
+        int lat;
+        for(int i = 0; i < n; ++i){
+        if(s[i] >= 'a' && s[i] <= 'z'){
+            ++lat;
+            }
+        }
+        printf("%d", lat);
+    }
+
+    if (N == 4) {
+        char s[31] = "";
+        printf("Введите строку: ");
+        scanf("%s",s);
+        int n = strlen(s);
+        printf("%d", n);
+    }
+
+    if (N == 5) {
+        char str[31] = "";
+        printf("Введите строку 1: ");
+        scanf("%s", str);
+        char pap[31] = "";
+        printf("Введите строку 2: ");
+        scanf("%s", pap);
+        char *p;
+        int len=strlen(pap);
+        int n=0;
+        p=str;
+        while(p=strstr(p, pap)) {
+            n++;
+            p+=len;
+        }
+        printf("%d\n", n);
+        return 0;
+    }
+
+}
