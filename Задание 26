@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    int a, b;
+    printf("Введите два числа для дальнейших вычислений\n");
+    printf("A:");
+    scanf("%d", &a);
+    printf("B:");
+    scanf("%d", &b);
+    int n;
+    printf("Данный калькулятор имеет команды:\n 1 - плюс(+)\n 2 - минус(-)\n 3 - умножить(*)\n 4 - разделить(:)\n\nВведите нужную команду: ");
+    scanf("%d", &n);
+    switch(n)
+    {
+    case 1:
+    printf("Сумма %d и %d равна %d ",a,b,a+b);
+    break;
+    case 2:
+    printf("разность %d и %d равна %d",a,b,a-b);
+    break;
+    case 3:
+    printf("произведение %d и %d равно %d",a,b,a*b);
+    break;
+    case 4:
+    if((a == 0)||(b == 0)){
+        printf("На ноль делить нельзя!!!!!");
+    }
+    else{
+    printf("Частное %d от %d is %f",b, a, (float)a/b);
+    break;
+    }
+    }
+}
