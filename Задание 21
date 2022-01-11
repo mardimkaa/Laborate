@@ -15,34 +15,47 @@ int main()
             int a[m][m];
          
             int i,j;
-            printf("Заполните матрицу\n");
             for (i=0; i<m; ++i){
+                printf("%i : \n", i+1);
                 for (j=0; j<m; ++j){
+                    printf("%i : ", j+1);
                     scanf("%i", &a[i][j]);
                 }
             }
-         
+            
+            printf("Исходная Матрица\n");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    printf("%d  ", a[i][j]);
+                }
+                printf("\n");
+            }
+            printf("Результат:\n");
              int i2;
              for (i2=0; i2<m/2; ++i2){
                  for (j=i2; j<m-i2; ++j){
-                    printf(" %i", a[j][i2]);
-                     
+                    printf("%i", a[j][i2]);
+                    printf(" ");
                  }
                  for (i=i2+1; i<=m-i2-1; ++i){
-                    printf(" %i", a[m-i2-1][i]);
+                    printf("%i", a[m-i2-1][i]);
+                    printf(" ");
                 
                 }
                  for (j=m-i2-2; j>=i2; --j){
-                    printf(" %i", a[j][m-i2-1]);
-                    
+                    printf("%i", a[j][m-i2-1]);
+                    printf(" ");
                  }
                  for (i=m-i2-2; i>=i2+1; --i){
-                    printf(" %i", a[i2][i]);
+                    printf("%i", a[i2][i]);
+                    printf(" ");
                 
                  }
                  printf("\n");
              }
-             printf(" %i\n", a[m / 2][m / 2]);
+             printf("%i\n", a[m / 2][m / 2]);
             return 0;
     }
 
@@ -57,22 +70,33 @@ int main()
         scanf("%i",&n);
         
         int a[m][n];
-        printf("Заполните матрицу\n");
-        
-        for(int i = 0; i < m; ++i){
-           for(int j = 0; j < n; ++j){
-               scanf("%d", &a[i][j]);
-           }
-        }
+        int i,j;
+            for (i=0; i<m; ++i){
+                printf("%i : \n", i+1);
+                for (j=0; j<n; ++j){
+                    printf("%i : ", j+1);
+                    scanf("%i", &a[i][j]);
+                }
+            }
+            
+            printf("Исходная Матрица\n");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    printf("%d  ", a[i][j]);
+                }
+                printf("\n");
+            }
             
         int k;
         printf("Введите число k: ");
         scanf("%i",&k);
         
-        int s, p = 1;
-        for(int i = 0; i < n; ++i){
-        s += a[k - 1][i];
-        p *= a[k - 1][i];
+        int s = 0, p = 1;
+        for(int i = 0; i < m; ++i){
+            s += a[k - 1][i];
+            p *= a[k - 1][i];
         }
         
         printf("Сумма - %d\n", s);
@@ -91,13 +115,24 @@ int main()
         scanf("%i",&n);
         
         int a[m][n];
-        printf("Заполните матрицу\n");
-        
-        for(int i = 0; i < m; ++i){
-           for(int j = 0; j < n; ++j){
-               scanf("%d", &a[i][j]);
-           }
-        }
+        int i,j;
+        for (i=0; i<m; ++i){
+                printf("%i : \n", i+1);
+                for (j=0; j<n; ++j){
+                    printf("%i : ", j+1);
+                    scanf("%i", &a[i][j]);
+                }
+            }
+            
+            printf("Исходная Матрица\n");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    printf("%d  ", a[i][j]);
+                }
+                printf("\n");
+            }
         int p;
         int min = 10000000;
         int pr = 0;
@@ -128,48 +163,69 @@ int main()
         scanf("%i",&n);
         
         int a[m][n];
-        printf("Заполните матрицу\n");
-        
-        for(int i = 0; i < m; ++i){
-           for(int j = 0; j < n; ++j){
-               scanf("%d", &a[i][j]);
-           }
-        }
-        
-        for (int j = 0; j < n; j++) {
-        int sum = 0;
-        for (int i = 0; i < m; i++)
-            sum += a[i][j];
+       int i,j;
+        for (i=0; i<m; ++i){
+                printf("%i : \n", i+1);
+                for (j=0; j<n; ++j){
+                    printf("%i : ", j+1);
+                    scanf("%i", &a[i][j]);
+                }
+            }
             
-        double sum2 = (double)sum / m;
-        int count = 0;
-        
-        
-        for (int i = 0; i < m; i++)
-            if (a[i][j] > sum2)
-                count++;
-            printf("Количество чисел для столбца\n");
-            printf("%d\n", count);
+            printf("Исходная Матрица\n");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    printf("%d  ", a[i][j]);
+                }
+                printf("\n");
+            }
+        int count;
+        int sum;
+        float sr;
+        printf("______________\n");
+        for (int j = 0; j < n; ++j) {
+        sum = count = 0;
+        for (int i = 0; i < m; ++i) {
+            sum += a[i][j];
+        }
+        sr = (float) sum / m;
+        for (int i = 0; i < m; ++i) {
+            if (a[i][j] > sr) {
+                ++count;
+            }
+        }
+        printf("%d  ",count);
     }
     }
 
     if (N == 5){
         int m, n;
-         
         printf("Введите m: ");
         scanf("%i",&m);
         
         printf("Введите n: ");
         scanf("%i",&n);
-        
         int a[m][n];
-        printf("Заполните матрицу\n");
-        
-        for(int i = 0; i < m; ++i){
-           for(int j = 0; j < n; ++j){
-               scanf("%d", &a[i][j]);
-           }
-        }
+        int i,j;
+        for (i=0; i<m; ++i){
+                printf("%i : \n", i+1);
+                for (j=0; j<n; ++j){
+                    printf("%i : ", j+1);
+                    scanf("%i", &a[i][j]);
+                }
+            }
+            
+            printf("Исходная Матрица\n");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    printf("%d  ", a[i][j]);
+                }
+                printf("\n");
+            }
         int Num;
         for(int j = 1; j < n; j++){
             Num = 0;
